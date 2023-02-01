@@ -12,7 +12,16 @@
   <body>
   <body>
     <h1>Movie Collection</h1>
-    <button id="sortBtn">Sort by Year</button>
+
+    <select id="sortSelect">
+      <option value="">Sort By</option>
+      <option value="yearA">Year (Ascending)</option>
+      <option value="yearD">Year (Descending)</option>
+      <option value="ratingA">Rating (Highest)</option>
+      <option value="ratingD">Rating (Lowest)</option>
+    </select>
+    
+    
     <button id="addBtn">Add new Movie</button>
     <div id="movieList">
       <!-- Movie cards will be dynamically added here -->

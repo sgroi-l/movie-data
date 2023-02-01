@@ -3,15 +3,26 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 8em;
 }
 
+#sortSelect, #addBtn {
+  margin: 10px;
+}
+
 #movieList {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
 .movie-card {

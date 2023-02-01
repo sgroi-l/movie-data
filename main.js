@@ -30,8 +30,7 @@
       },
     };
   
-    let sortBtn = document.getElementById("sortBtn");
-    sortBtn.addEventListener("click", sortMovies);
+   
   
     function displayMovies() {
       let movieListEl = document.getElementById("movieList");
@@ -51,12 +50,51 @@
         movieListEl.innerHTML += movieCard;
       }
     }
+
+    
+    
   
-    function sortMovies() {
+    function sortYearA() {
       movieData = Object.entries(movieData).sort((a, b) => a[1].year - b[1].year);
       movieData = Object.fromEntries(movieData);
       displayMovies();
     }
+
+    function sortYearD() {
+      movieData = Object.entries(movieData).sort((a, b) => b[1].year - a[1].year);
+      movieData = Object.fromEntries(movieData);
+      displayMovies();
+    }
+
+    function sortRatingA() {
+      movieData = Object.entries(movieData).sort((a, b) => b[1].rating - a[1].rating);
+      movieData = Object.fromEntries(movieData);
+      displayMovies();
+    }
+
+    function sortRatingD() {
+      movieData = Object.entries(movieData).sort((a, b) => a[1].rating - b[1].rating);
+      movieData = Object.fromEntries(movieData);
+      displayMovies();
+    }
+
+
+    
+
+    document.getElementById("sortSelect").addEventListener("change", (event) => {
+      let sortOption = event.target.value;
+      if (sortOption === "yearD") {
+        sortYearD();
+      } else if (sortOption === "yearA") {
+        sortYearA();
+      } else if (sortOption === "ratingA") {
+        sortRatingA();
+      } else if (sortOption === "ratingD") {
+        sortRatingD();
+      }
+
+  
+    });
 
     let addBtn = document.getElementById("addBtn");
     addBtn.addEventListener("click", function () {
@@ -73,6 +111,8 @@
     displayMovies();
     
     });
+
+    
   
 displayMovies();
 
