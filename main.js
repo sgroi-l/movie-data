@@ -1,5 +1,7 @@
-
-    let movieData = {
+/* This code defines an object named "movieData" that contains information about several movies.
+Each movie is an object within the "movieData" object, with properties such as "plot", "cast", "runtime", "rating", and "year". */
+    
+   let movieData = {
       "The Darjeeling Limited": {
         plot: "A year after their father's funeral, three brothers travel across India by train in an attempt to bond with each other.",
         cast: ["Jason Schwartzman", "Owen Wilson", "Adrien Brody"],
@@ -30,15 +32,24 @@
       },
     };
   
-   
+// The function "displayMovies" takes the movie data and displays it on a page by building HTML for each movie and appending it to the "movieList" element.
+
+const randomColor = () => {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+};
   
     function displayMovies() {
       let movieListEl = document.getElementById("movieList");
       movieListEl.innerHTML = "";
   
       for (let movie in movieData) {
+        
         let movieCard = `
           <div class="movie-card">
+          
             <h3>${movie}</h3>
             <p><b>Plot:</b> ${movieData[movie].plot}</p>
             <p><b>Cast:</b> ${movieData[movie].cast.join(", ")}</p>
@@ -47,16 +58,29 @@
             <p><b>Year:</b> ${movieData[movie].year}</p>
           </div>
         `;
-        movieListEl.innerHTML += movieCard;
-      }
+
+         movieListEl.innerHTML += movieCard;
+       
+        
+        
+      };  
+      const cards = document.querySelectorAll('.movie-card');
+      for (let i = 0; i < cards.length; i++) {
+      cards[i].style.borderTop = `3px solid ${randomColor()}`; 
+      };
+ 
     }
 
-    
+  
+
+/* The functions "sortYearA", "sortYearD", "sortRatingA", and "sortRatingD" sort the movie data in ascending or descending order based on the year or rating properties, respectively. 
+They do this by converting the movie data object into an array of key-value pairs, sorting the array, and then converting it back into an object. 
+The "displayMovies" function is called after each sort to update the display with the sorted movie data. */
     
   
     function sortYearA() {
-      movieData = Object.entries(movieData).sort((a, b) => a[1].year - b[1].year);
-      movieData = Object.fromEntries(movieData);
+      movieData = Object.entries(movieData).sort((a, b) => a[1].year - b[1].year); 
+      movieData = Object.fromEntries(movieData); 
       displayMovies();
     }
 
@@ -78,7 +102,7 @@
       displayMovies();
     }
 
-
+// Calling the functions with an event listener on the drop down bar //
     
 
     document.getElementById("sortSelect").addEventListener("change", (event) => {
@@ -96,6 +120,10 @@
   
     });
 
+/* This code is for adding new movie data to the movieData object. The user is prompted for the name, year, plot, cast, runtime, and rating of the new movie. 
+The information is then used to create a new movie object and add it to the movieData object using the new movie name as the key. */
+
+
     let addBtn = document.getElementById("addBtn");
     addBtn.addEventListener("click", function () {
         let newMovieName = prompt("Enter the name of the movie");
@@ -111,6 +139,8 @@
     displayMovies();
     
     });
+
+ 
 
     
   
