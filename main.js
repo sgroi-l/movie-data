@@ -1,3 +1,5 @@
+
+
 /* This code defines an object named "movieData" that contains information about several movies.
 Each movie is an object within the "movieData" object, with properties such as "plot", "cast", "runtime", "rating", and "year". */
     
@@ -146,4 +148,14 @@ The information is then used to create a new movie object and add it to the movi
   
 displayMovies();
 
+
+
+const movieContainer = document.getElementById('movieList');
+
+movieContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('movie-card')) {
+    console.log('Clicked on a movie card');
+    event.target.classList.toggle('highlight');
+  }
+});
 

@@ -7,12 +7,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("images/space.jpg");
+  background-attachment: fixed;
 }
 
 h1 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 8em;
+    color:#7f7f7f;
 }
 
 #sortSelect, #addBtn {
@@ -33,7 +36,18 @@ h1 {
         width: 300px;
         margin: 10px;
         text-align: left;
+        background-color: rgba(255, 255, 255, 0.6);
       }
+
+.movie-card:hover {
+  cursor: pointer;
+}
+
+.highlight {
+  transform: scale(2);
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+}
   
 select {
         background-color: #f2f2f2;
