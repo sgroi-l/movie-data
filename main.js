@@ -62,7 +62,6 @@ const randomColor = () => {
         `;
 
          movieListEl.innerHTML += movieCard;
-       
         
         
       };  
@@ -70,6 +69,14 @@ const randomColor = () => {
       for (let i = 0; i < cards.length; i++) {
       cards[i].style.borderTop = `3px solid ${randomColor()}`; 
       };
+
+      const movieCards = document.querySelectorAll('.movie-card');
+
+      movieCards.forEach(card => {
+      card.addEventListener('click', () => {
+      card.classList.toggle('highlight');
+      });
+      });
  
     }
 
@@ -150,12 +157,4 @@ displayMovies();
 
 
 
-const movieContainer = document.getElementById('movieList');
-
-movieContainer.addEventListener('click', function(event) {
-  if (event.target.classList.contains('movie-card')) {
-    console.log('Clicked on a movie card');
-    event.target.classList.toggle('highlight');
-  }
-});
 
