@@ -43,9 +43,11 @@ After building it's essential to test and debug the page to ensure it functions 
 
 I used the W3C validator and other validators to check that the page had valid HTML, CSS and conformed to WCAG 2.1 requirements. 
 
-When viewing the page through smaller viewports I again noticed that the text felt quite dominating, so I used media queries to stop the articles from displaying as flexboxes. At first I was changing the JavaScript and adding `if` statements to make the `scaleArticles()` function only run above certain widths, then I realised I could use CSS media queries and change the properties of the `classList` I was adding. It would be interesting to find which is a more 'efficient' method, though I suspect that due to the low intensity of the page that performance changes would be negligible.
 
-I had some friends look over the page to tell me what they thought. They noticed that at certain screen sized the `h1` was being cut off, so I changed its font size to use relative units and then set a maximum size so that it wouldn't grow indefinitely.
+I  noticed that the click event which added classes to the card when they were selected wasn't always working when I clicked on a card. I added borders around every element on the card and also added `console.log` messages throughout my JavaScript in order to figure out where my code was becoming unresponsive. I realised that when I clicked on an area of the card which contained text the 'click' event wasn't being 'heard'. 
+
+I changed my code and used `forEach` in order to add an event listener to each card on the page and the event now propagates as expected.
+
 
 
 
