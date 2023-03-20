@@ -43,7 +43,7 @@ const randomColor = () => {
   return `rgb(${r}, ${g}, ${b})`;
 };
   
-    function displayMovies() {
+function displayMovies() {
       let movieListEl = document.getElementById("movieList");
       movieListEl.innerHTML = "";
   
@@ -78,7 +78,7 @@ const randomColor = () => {
       });
       });
  
-    }
+}
 
   
 
