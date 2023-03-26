@@ -16,7 +16,7 @@ Before starting the project, I decided what I wanted to include on the page.
 
 ## Building
 
-The HTML for this page is very simple as most of the content comes from the JavaScript file. We start with a `h1`, a `select` menu, a `button` and an empty `div`.
+The HTML for this page is very simple as most of the content comes from the JavaScript file. We start with an `h1`, a `select` menu, a `button` and an empty `div`.
 
 We are provided with a `movieData` object that contains information about several movies. Each movie is represented by a key-value pair, where the key is the movie title and the value is an object that contains information about the movie such as the plot, cast, runtime, rating, and year.
 
@@ -24,9 +24,9 @@ The `displayMovies` function first gets the `movieList` element by its ID and se
 
 The `querySelectorAll` method is used to select all elements with the class `movie-card`, and the `forEach` method is used to add an event listener to each element. When a movie card is clicked, the `highlight` class is toggled on the element.
 
-The `randomColor` function generates a random RGB color value that is used to style the movie cards.
+The `randomColor` function generates a random RGB colour value that is used to style the movie cards.
 
-I then needed to build functions which sort the movie data, arrays have a built in `sort` method. So in this case our data will be easier to work with if we convert from object to array. We use the `Object.entries` method to convert the object into an array of key-value pairs, and the `sort` method to sort the array based on the year or rating of each movie. The `Object.fromEntries` method is then used to convert the sorted array back into an object.
+I then needed to build functions which sort the movie data. Arrays have a built in `sort` method, so in this case our data will be easier to work with if we convert from object to array. We use the `Object.entries` method to convert the object into an array of key-value pairs, and the `sort` method to sort the array based on the year or rating of each movie. The `Object.fromEntries` method is then used to convert the sorted array back into an object.
 
 I then add an event listener that listens for a change in the value of the `sortSelect` element. When the value changes, it checks the value of the `sortOption` variable and calls the appropriate function based on the value.
 
